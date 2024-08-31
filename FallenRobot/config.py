@@ -1,36 +1,35 @@
+
 class Config(object):
     LOGGER = True
+    # REQUIRED
+    # Login to https://my.telegram.org and fill in these slots with the details given by it
 
-    # Get this value from my.telegram.org/apps
-    API_ID = ""
-    API_HASH = ""
+    API_ID = "25614292" # integer value, dont use ""
+    API_HASH = "59ee8005ce6b056fa639d956f028eeeb"
+    TOKEN = "6909402640:AAEUXjuibT9DlAl72lSi3JtVFnwUWwG931Q"  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
+    OWNER_ID = 7006715434 # If you dont know, run the bot and do /id in your private chat with it, also an integer
+    
+    SUPPORT_CHAT = "kittybothub"  # Your own group for support, do not add the @
+    START_IMG = "https://telegra.ph/file/5618197d321f4f555bb9c.jpg"
+    EVENT_LOGS = (-1002024032988)  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
+    MONGO_DB_URI= "mongodb+srv://chalcogen:dumb980@cluster0.u25jq25.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    # RECOMMENDED
+    DATABASE_URL = "postgresql://xrlkskby:gobwyeqocauwmdrggqom@alpha.mkdb.sh:5432/rjfvbvce"  # A sql database url from elephantsql.com
+    CASH_API_KEY = (
+        "4Z5UHYEW3LJ7U99J"  # Get your API key from https://www.alphavantage.co/support/#api-key
+    )
+    TIME_API_KEY = "V33SSMCSDT6L"
+    
+    # Get your API key from https://timezonedb.com/api
 
-    CASH_API_KEY = ""  # Get this value for currency converter from https://www.alphavantage.co/support/#api-key
-
-    DATABASE_URL = ""  # A sql database url from elephantsql.com
-
-    EVENT_LOGS = ()  # Event logs channel to note down important bot level events
-
-    MONGO_DB_URI = ""  # Get ths value from cloud.mongodb.com
-
-    # Telegraph link of the image which will be shown at start command.
-    START_IMG = "https://te.legra.ph/file/82f1053c956dd6256ff1e.jpg"
-
-    SUPPORT_CHAT = "BRANDED_WORLD"  # Your Telegram support group chat username where your users will go and bother you
-
-    TOKEN = ""  # Get bot token from @BotFather on Telegram
-
-    TIME_API_KEY = ""  # Get this value from https://timezonedb.com/api
-
-    OWNER_ID = 6258877205  # User id of your telegram account (Must be integer)
 
     # Optional fields
-    BL_CHATS = []  # List of groups that you want blacklisted.
-    DRAGONS = []  # User id of sudo users
-    DEV_USERS = []  # User id of dev users
-    DEMONS = []  # User id of support users
-    TIGERS = []  # User id of tiger users
-    WOLVES = []  # User id of whitelist users
+    BL_CHATS = [] # List of groups that you want blacklisted.
+    DRAGONS = [7006715434] # User id of sudo users
+    DEV_USERS = [7006715434] # User id of dev users
+    DEMONS = [7006715434]  # User id of support users
+    TIGERS = [7006715434]  # User id of tiger users
+    WOLVES = [7006715434]  # User id of whitelist users
 
     ALLOW_CHATS = True
     ALLOW_EXCL = True
@@ -41,7 +40,7 @@ class Config(object):
     STRICT_GBAN = True
     TEMP_DOWNLOAD_DIRECTORY = "./"
     WORKERS = 8
-
+    
 
 class Production(Config):
     LOGGER = True
